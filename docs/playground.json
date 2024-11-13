@@ -1,1 +1,79 @@
-test
+{
+    "_id" : 1,
+    "name": "osman",
+    "surname": "yaycıoğlu",
+    "age": 55,
+    "city": "Ankara",
+    // oneToOne data -> embedded doc
+    "address": {
+        "city": "Ankara",
+        "street": "Mamak",
+        "district": "Atatürk cad.",
+        "info" : {
+            "note" : "xyz",
+            "priority" : 5
+        }
+    },
+    // oneToMany data -> embedded doc
+    "phones": [
+        {
+            "name": "ev",
+            "phone": "234823874623"
+        },
+        {
+            "name": "ofis",
+            "phone": "234823874624"
+        },
+        {
+            "name": "yazlık",
+            "phone": "23482387465"
+        }
+    ],
+    "rating" : [ // relation better solution
+        {
+            "rater" : "ali",
+            "score" : 30
+        },
+        {
+            "rater" : "mehmet",
+            "score" : 35
+        },
+        {
+            "rater" : "null",
+            "score" : 0
+        }
+    ] ,
+    "department" : "IT",
+    // manyToMany data -> relation
+    "departments" : [
+        1,2
+    ],
+    "nickNames": [
+        "osman","osy","ozi"
+    ]
+},
+// department collection
+{
+    "_id" : 1,
+    "customerId" : [1,10]
+    "departmentName" : "IT",
+    "departmentLocation" : "istanbul" 
+},
+{
+    "_id" : 2,
+    "customerId" : [1,10]
+   "departmentName" : "BUSINESS",
+    "departmentLocation" : "antalya" 
+}
+
+// department collection
+{
+    "_id" : 1,
+    "departmentName" : "IT",
+    "departmentLocation" : "istanbul" 
+},
+{
+    "_id" : 2,
+    "departmentName" : "BUSINESS",
+    "departmentLocation" : "antalya" 
+}

@@ -1,0 +1,8 @@
+runtime 120 den büyük ve tomatoes.viewer.rating 2 den büyükj olanları al
+plot,title,countries,released,year,imdb,tomatoes fieldları ile beraber totalRating field ı ekle
+totalRating : imdb.rating + tomatoes.viewer.rating
+
+
+genres e gore grouplama , runtime i topla
+year a göre bucketAuto
+imdb.vote göre bucket
